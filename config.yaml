@@ -1,0 +1,62 @@
+# Default sorting rules for the file organizer.
+# Each key is a destination folder name, each value is a list of file
+# extensions (lowercase, no dot) that should end up there.
+#
+# Copy this file, tweak it, and point the CLI at your version with
+# --config path/to/your.yaml if you want different rules.
+
+categories:
+  Images:
+    - jpg
+    - jpeg
+    - png
+    - gif
+    - bmp
+    - svg
+    - webp
+  Documents:
+    - pdf
+    - doc
+    - docx
+    - txt
+    - md
+    - odt
+    - rtf
+  Spreadsheets:
+    - xls
+    - xlsx
+    - csv
+  Videos:
+    - mp4
+    - mov
+    - avi
+    - mkv
+    - webm
+  Audio:
+    - mp3
+    - wav
+    - flac
+    - m4a
+  Archives:
+    - zip
+    - rar
+    - 7z
+    - tar
+    - gz
+  Installers:
+    - exe
+    - dmg
+    - pkg
+    - msi
+  Code:
+    - py
+    - js
+    - ts
+    - html
+    - css
+    - json
+    - java
+    - cpp
+
+# anything not matched above goes here
+fallback_folder: Other
