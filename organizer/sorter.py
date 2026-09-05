@@ -5,6 +5,11 @@ from pathlib import Path
 
 logger = logging.getLogger("organizer")
 
+# files we never want to sweep up, even though they live in the watched
+# folder — mainly our own log file, which we learned the hard way after
+# it kept getting filed into "Other" on every run
+IGNORED_NAMES = {"organizer.log", ".DS_Store", "Thumbs.db"}
+
 
 @dataclass
 class Move:
@@ -41,6 +46,8 @@ def plan_moves(directory: Path, config: dict) -> list[Move]:
         if item.is_dir():
             continue
         if item.name.startswith("."):
+            continue
+        if item.name in IGNORED_NAMES:
             continue
 
         folder_name = _destination_folder(item, config)
